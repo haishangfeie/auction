@@ -11,7 +11,7 @@ export class ProductService {
   searchEvent: EventEmitter<ProductSearchParams> = new EventEmitter();
 
 
-  getAllCategories(): string[] {
+  static getAllCategories(): string[] {
     return ["电子产品", "硬件设备", "图书"];
   }
 

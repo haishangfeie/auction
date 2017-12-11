@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import  { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import { Product, ProductService, Comment } from '../shared/product.service';
-
-
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -31,8 +29,8 @@ export class ProductDetailComponent implements OnInit {
     const comment = new Comment(0, this.product.id, new Date().toISOString(), "someone", this.newRating, this.newComment);
     this.comments.unshift(comment);
 
-    const sum = this.comments.reduce((sum, comment) => sum + comment.rating, 0);
-    this.product.rating = sum / this.comments.length;
+    const rating = this.comments.reduce(( sum , commentTmp ) => sum + commentTmp.rating, 0);
+    this.product.rating = rating / this.comments.length;
     this.newComment = null;
     this.newRating = 5;
     this.isCommentHidden = true;

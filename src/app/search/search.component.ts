@@ -28,17 +28,17 @@ export class SearchComponent implements OnInit {
     if (!control.value) {
       return null;
     }
-    const price = parseInt(control.value);
+    const price = parseInt(control.value, 0 );
 
     if (price > 0) {
       return null;
-    }else{
+    }else {
       return {positiveNumber: true};
     }
   }
 
   onSearch() {
-    if (this.formModel.valid){
+    if (this.formModel.valid) {
       this.productService.searchEvent.emit(this.formModel.value);
     }
   }
