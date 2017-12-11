@@ -1,3 +1,4 @@
+///<reference path="../../node_modules/@angular/http/src/http_module.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -17,12 +18,13 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HomeComponent } from './home/home.component';
 import { ProductService } from './shared/product.service';
 import { FilterPipe } from './pipe/filter.pipe';
+import {HttpModule} from "@angular/http";
 
 
 
 const routeConfig: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'product/:productId',component:ProductDetailComponent}
+  {path: '', component: HomeComponent},
+  {path: 'product/:productId', component: ProductDetailComponent}
 ];
 
 @NgModule({
@@ -42,7 +44,8 @@ const routeConfig: Routes = [
     BrowserModule,
     RouterModule.forRoot(routeConfig),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
