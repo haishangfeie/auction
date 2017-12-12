@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  evn: '生产环境'
+  evn: '测试环境'
 };

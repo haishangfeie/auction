@@ -20,6 +20,8 @@ import { ProductService } from './shared/product.service';
 import { FilterPipe } from './pipe/filter.pipe';
 import {HttpModule} from "@angular/http";
 import {WebSocketService} from "./shared/web-socket.service";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {environment} from "../environments/environment";
 
 
 
@@ -48,7 +50,12 @@ const routeConfig: Routes = [
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [ProductService, WebSocketService],
+  providers: [ProductService, WebSocketService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  title = '面试作品-竞拍网站';
+  constructor() {
+    console.log(`当前处于${environment.evn}`);
+  }
+}
