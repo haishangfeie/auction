@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductService } from './shared/product.service';
 import { FilterPipe } from './pipe/filter.pipe';
 import {HttpModule} from "@angular/http";
+import {WebSocketService} from "./shared/web-socket.service";
 
 
 
@@ -47,7 +48,7 @@ const routeConfig: Routes = [
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, WebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

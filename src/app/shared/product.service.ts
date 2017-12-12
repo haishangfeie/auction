@@ -11,8 +11,9 @@ export class ProductService {
   searchEvent: EventEmitter<ProductSearchParams> = new EventEmitter();
 
 
-  static getAllCategories(): string[] {
-    return ["电子产品", "硬件设备", "图书"];
+  getAllCategories(): string[] {
+    const AllCategories = ["电子产品", "硬件设备", "图书"];
+    return AllCategories;
   }
 
   getProducts(): Observable<Product[]> {
