@@ -55,7 +55,4 @@ const routeConfig: Routes = [
 })
 export class AppModule {
   title = '面试作品-竞拍网站';
-  constructor() {
-    console.log(`当前处于${environment.evn}`);
-  }
 }

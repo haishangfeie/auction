@@ -16,9 +16,7 @@ export class ProductComponent implements OnInit {
 
   private imgUrl = 'http://placehold.it/320x150';
 
-  private keyword: string;
 
-  private titleFilter: FormControl = new FormControl();
 
   constructor(private productService: ProductService) {
 
@@ -27,7 +25,6 @@ export class ProductComponent implements OnInit {
   // 在组件示例化后会调用一次，以初始化数据
   ngOnInit() {
     this.products = this.productService.getProducts();
-
     this.productService.searchEvent.subscribe(
       params => this.products = this.productService.search(params)
     );
