@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/product.service';
 import { ProductService  } from '../shared/product.service';
-import { FormControl } from '@angular/forms';
 import {Observable} from "rxjs/Observable";
 
 

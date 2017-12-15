@@ -12,8 +12,12 @@ export class ProductService {
 
 
   getAllCategories(): string[] {
-    const AllCategories = ["电子产品", "硬件设备", "图书"];
+    const AllCategories = ["玉器", "项链", "艺术品"];
     return AllCategories;
+  }
+
+  getCarouselImg(): Observable<string[]> {
+    return this.http.get("/api/carousel").map(res => res.json());
   }
 
   getProducts(): Observable<Product[]> {

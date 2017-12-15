@@ -1,3 +1,4 @@
-.slide-image {
-  width: 100%;
+.carousel.slide {
+  margin: 0 auto;
+  width: 97%;
 }

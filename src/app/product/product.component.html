@@ -1,13 +1,19 @@
-<div class="col-md-4 col-sm-4 col-lg-4 " *ngFor="let product of products | async" >
-  <div class="thumbnail">
+<div class="col-xs-12 col-md-6 col-sm-6 col-lg-4 " *ngFor="let product of products | async" >
+  <div class="thumbnail clearfix">
     <img [src]="imgUrl" alt="">
     <div class="caption">
       <h4 class="pull-right">{{ product.price }}元</h4>
       <h4><a [routerLink]="['/product',product.id]">{{ product.title }}</a></h4>
       <p>{{ product.desc }}</p>
     </div>
-    <div>
+    <div class="pull-left">
       <app-stars [rating]="product.rating"></app-stars>
+    </div>
+    <div class="product-department pull-right">
+      <span *ngFor="let name of product.categories; let i=index">
+        <a href="#">{{ name }}</a>
+        <span>{{i < (product.categories.length-1) ? '>' : ''}}</span>
+      </span>
     </div>
   </div>
 </div>
